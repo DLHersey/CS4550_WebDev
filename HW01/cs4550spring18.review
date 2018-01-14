@@ -1,0 +1,16 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /home/dave/www/cs4550spring18.review;
+
+        index index.html;
+
+        server_name cs4550spring18.review www.cs4550spring18.review;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
