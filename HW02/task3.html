@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HW02 Task3</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Task 3 for the second homework for CS4550 at Northeastern University">
+        <meta name="author" content="David Hersey">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            .links {
+                width: 33%;
+                padding-top: 50px;
+                font-size: 110%;
+                font-size-adjust: inherit;
+                float: left;
+            }
+            div ul {
+                list-style-type: none;
+                float: left;
+                padding-left: 20%;
+            }
+            div ul li {
+                padding: 5px;
+            }
+            .content {
+                width: 66%;
+                float: right;
+                border-left:1px solid black;
+            }
+            .content * {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+            }
+            .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+    </head>
+<body onload="contentLorum()">
+    <h1>HW02 Task Three</h1>
+    <div class="clearfix">
+        <div class="links">
+            <ul>
+                <li><a href="javascript:contentLorum()">Lorum Ipsum</a></li>
+                <li><a href="javascript:contentBottles()">99 Bottles</a></li>
+                <li><a href="javascript:contentLast()">Last Thing</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="cHead" id="cHead"></h2>
+            <div  id="contentBody">
+            </div>
+        </div>
+    </div>
+    <script>
+        // Declare Lorum paragraphs.
+        // Lorum Ipsum generated using [https://loremipsumgenerator.com/generator/]
+        var lorem1 = document.createElement("P");
+        var lorem2 = document.createElement("P");
+        var lorem3 = document.createElement("P");
+        var lorem4 = document.createElement("P");
+
+        var loremP1 = document.createTextNode(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst quisque. Natoque penatibus et magnis dis parturient. Malesuada fames ac turpis egestas. Amet consectetur adipiscing elit ut aliquam purus sit. Purus faucibus ornare suspendisse sed nisi lacus sed. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Justo laoreet sit amet cursus sit amet. Pellentesque habitant morbi tristique senectus et. Ultrices in iaculis nunc sed augue lacus viverra vitae. Hendrerit dolor magna eget est lorem.");
+        lorem1.appendChild(loremP1);
+
+        var loremP2 = document.createTextNode(
+            "Pharetra pharetra massa massa ultricies. Fringilla est ullamcorper eget nulla. Vulputate ut pharetra sit amet aliquam id diam. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Posuere ac ut consequat semper viverra nam libero. Lorem dolor sed viverra ipsum. Lectus nulla at volutpat diam ut venenatis tellus in. In eu mi bibendum neque egestas congue. Amet purus gravida quis blandit turpis cursus in hac habitasse. Ornare lectus sit amet est placerat in egestas. Elit at imperdiet dui accumsan. Amet nisl purus in mollis nunc sed. Ipsum dolor sit amet consectetur adipiscing elit. Convallis aenean et tortor at risus viverra. Aliquet risus feugiat in ante. Leo in vitae turpis massa. Ut eu sem integer vitae justo eget magna fermentum. Quis lectus nulla at volutpat diam ut venenatis tellus. Sit amet nisl suscipit adipiscing bibendum est. Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque.");
+        lorem2.appendChild(loremP2);
+
+        var loremP3 = document.createTextNode(
+            "Purus sit amet luctus venenatis. Amet aliquam id diam maecenas. Aliquet nec ullamcorper sit amet. Aliquam ultrices sagittis orci a scelerisque purus semper eget. Feugiat vivamus at augue eget arcu dictum varius duis at. Sodales neque sodales ut etiam. Nisl tincidunt eget nullam non nisi. Purus sit amet volutpat consequat mauris. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Commodo nulla facilisi nullam vehicula. Viverra adipiscing at in tellus integer feugiat scelerisque. Quisque non tellus orci ac auctor. Morbi tristique senectus et netus et malesuada fames ac. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Etiam sit amet nisl purus in mollis nunc.");
+        lorem3.appendChild(loremP3);
+
+        var loremP4 = document.createTextNode(
+            "Dolor sit amet consectetur adipiscing elit duis. Sed lectus vestibulum mattis ullamcorper velit sed. Pellentesque habitant morbi tristique senectus. Quis lectus nulla at volutpat. Mauris in aliquam sem Lfringilla ut morbi tincidunt. Adipiscing elit duis tristique sollicitudin. Id interdum velit laoreet id donec ultrices. Tincidunt eget nullam non nisi est sit amet facilisis magna. Enim tortor at auctor urna nunc. Congue quisque egestas diam in arcu cursus euismod quis viverra.");
+        lorem4.appendChild(loremP4);
+
+        // Fill Content with Lorum Ipsum paragraphs
+        function contentLorum() {
+            document.getElementById("cHead").innerHTML = "Lorum Ipsum";
+            document.getElementById("contentBody").innerHTML = '';
+            document.getElementById("contentBody").appendChild(lorem1);
+            document.getElementById("contentBody").appendChild(lorem2);
+            document.getElementById("contentBody").appendChild(lorem3);
+            document.getElementById("contentBody").appendChild(lorem4);
+        }
+
+        // Create 99Bottles content programatically
+        function contentBottles() {
+            // clear content
+            document.getElementById("contentBody").innerHTML = '';
+            // change header
+            document.getElementById("cHead").innerHTML = "99 Bottles of Beer";
+            // song starts at 99
+            var bottlecount = 99;
+            // number of verses
+            var verseNum = 4;
+            while (verseNum > 0) { 
+                var bottles = document.createElement("P");
+                var versePart01 = document.createTextNode(String(bottlecount)+" bottles of beer on the wall, "+String(bottlecount)+" bottles of beer.");
+                
+                bottles.appendChild(versePart01);
+                bottles.appendChild(document.createElement("BR"));
+                bottlecount -= 1;
+
+                var versePart02 = document.createTextNode("Take one down, pass it around, "+String(bottlecount)+" bottles of beer on the wall...");
+                bottles.appendChild(versePart02);
+                
+                document.getElementById("contentBody").appendChild(bottles);
+
+                verseNum -= 1;
+            }
+        }
+
+        //Last Thing
+        function contentLast() {
+            document.getElementById("cHead").innerHTML = "Last Thing";
+            document.getElementById("contentBody").innerHTML = "this is the third thing";
+        }
+    </script>
+</body>
+</html>

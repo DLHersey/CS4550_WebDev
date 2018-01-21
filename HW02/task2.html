@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HW02 Task2</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Task 2 for the second homework for CS4550 at Northeastern University">
+        <meta name="author" content="David Hersey">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1 id="value01">10</h1>
+    <button id="b01">Current Value</button>
+    <br>
+    <button id="b02">Increment Value</button>
+    <br>
+    <button id="b03">Append Value</button>
+    <br><hr>
+    <!-- Log of appended Values -->
+    <h2>Log:</h2>
+    <script>
+        //Listen for button 1
+        document.getElementById("b01").addEventListener("click", alertValue);
+        //Listen for button 2
+        document.getElementById("b02").addEventListener("click", incrementValue);
+        //Listen for button 3
+        document.getElementById("b03").addEventListener("click", appendValue);
+        
+        //create an alert with the current value
+        function alertValue() {
+            window.alert("Current Value is: "+ document.getElementById("value01").innerText);
+        }
+        //increment the current value by 1
+        function incrementValue() {
+            var value = Number(document.getElementById("value01").innerText);
+            document.getElementById("value01").innerText = value + 1;
+        }
+        //append the current value to the log area
+        function appendValue() {
+            var entry = document.createElement("P");
+            var value = document.getElementById("value01").innerText;
+            var t = document.createTextNode(value);
+            entry.appendChild(t);
+            document.body.appendChild(entry);
+        }
+    </script>
+</body>
+</html>
